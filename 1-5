@@ -1,0 +1,29 @@
+no 2
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head></head>
+<body>
+    <p>
+        Masukan password huruf kecil, sebuah huruf besar, sebuah angka dan sebuah karakter spesial
+    </p>
+    <input type="text"id="password"></input>
+    <button onclick="CheckPassword()">Enter</button>
+    <script language="javascript">
+    function CheckPassword() {
+        var pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+        var password = document.getElementById("password");
+          if(password.value.match(pass)) {
+            alert('Password is valid.')
+            return true;
+          }
+          else {
+            alert('Password is invalid. Please try again.')  
+            return false;  
+          } 
+    }    
+    </script>
+</body>
+
+</html>
